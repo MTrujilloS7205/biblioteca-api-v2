@@ -75,19 +75,19 @@ Ejemplo de error:
 ![Swagger](./images/swagger-overview.png)
 
 ### Crear autor (POST)
-![POST](./images/post-autores-success.png)
+![POST](./images/post-autores.png)
 
-### Obtener autor por ID
-![GET](./images/get-autor-id-success.png)
+### Obtener autores
+![GET](./images/get-autores-success.png)
 
 ### Error 404
 ![404](./images/get-autor-id-not-found.png)
 
-### Error 409 (duplicado)
-![409](./images/put-autores-existe.png)
-
 ### Eliminación exitosa
 ![DELETE](./images/delete-autores-success.png)
+
+### Reporte PDF
+![PDF](./images/pdf-reporte-libros.png)
 
 
 ## 🗄️ Base de datos
