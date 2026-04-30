@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <!-- 1. CONSOLA -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] | [%thread] | %-5level | %logger{36} | %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- 2. ARCHIVO -->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>mislogs/biblioteca-%d{yyyyMMdd}.log</fileNamePattern>
+      <maxHistory>90</maxHistory>
+      <totalSizeCap>1GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] | [%thread] | %-5level | %logger{36} | %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- 3. RESTO DE TU PROYECTO (CONSOLA Y ARCHIVO) -->
+  <!-- Nota: Este logger aplicará a todo en com.michael.biblioteca EXCEPTO a lo definido arriba -->
+  <logger name="com.michael.biblioteca" level="INFO" additivity="false">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="FILE"/>
+  </logger>
+
+  <!-- 4. CLASE DE ARRANQUE (SOLO CONSOLA) -->
+  <!-- Esto quita las líneas de "Starting/Started" del archivo -->
+  <logger name="com.michael.biblioteca.BibliotecaApplication" level="INFO" additivity="false">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  
+  <!-- 5. TODO LO DEMÁS (Spring, Hibernate, etc. SOLO CONSOLA) -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+  
+</configuration>
