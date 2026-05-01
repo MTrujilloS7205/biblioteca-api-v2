@@ -1,6 +1,6 @@
 # 📚 Biblioteca API
 
-API REST desarrollada con Spring Boot para la gestión de autores y libros. 
+API REST desarrollada con Spring Boot para la gestión de autores y libros.  
 Incluye operaciones CRUD completas, validaciones en capa de servicio y manejo global de excepciones con respuestas estructuradas.
 
 Este proyecto fue diseñado siguiendo buenas prácticas de arquitectura en capas (Controller, Service, Repository) y orientado a ser consumido por múltiples clientes frontend.
@@ -9,45 +9,63 @@ Este proyecto fue diseñado siguiendo buenas prácticas de arquitectura en capas
 
 ## 🚀 Tecnologías utilizadas
 
-- Java 17
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Hibernate
-- MySQL
-- Swagger (OpenAPI)
+- Java 17  
+- Spring Boot  
+- Spring Web  
+- Spring Data JPA  
+- Hibernate  
+- MySQL  
+- Swagger (OpenAPI)  
 - Logging (SLF4J + Logback)
 
 ---
 
 ## ⚙️ Cómo ejecutar el proyecto
 
-1. Clonar el repositorio
-2. Abrir el proyecto en tu IDE (NetBeans, IntelliJ o Eclipse)
-3. Configurar la base de datos en el archivo `application.properties`
-4. Ejecutar la aplicación
+1. Clonar el repositorio  
+2. Abrir el proyecto en tu IDE (NetBeans, IntelliJ o Eclipse)  
+3. Configurar la base de datos en el archivo `application.properties`  
 
-La API estará disponible en:
+### 🗄️ Base de datos
+
+Antes de ejecutar el script, debes crear la base de datos manualmente en MySQL:
+
+```sql
+CREATE DATABASE biblioteca_db;
+```
+
+Luego ejecutar el script ubicado en:
+
+```
+database/biblioteca-db.sql
+```
+
+Asegúrate de configurar correctamente las credenciales en `application.properties`.
+
+---
+
+## 🌐 Base URL
+
 http://localhost:8080/api
 
-Swagger UI:
+---
+
+## 📄 Documentación
+
+Swagger UI disponible en:
+
 http://localhost:8080/swagger-ui.html
 
 ---
 
 ## 📌 Endpoints principales
 
-### Crear autor
-POST /api/autores
+### 🔹 Autor
 
-### Obtener autor por ID
-GET /api/autores/{id}
-
-### Actualizar autor
-PUT /api/autores/{id}
-
-### Eliminar autor
-DELETE /api/autores/{id}
+- **POST** `/api/autores` → Crear autor  
+- **GET** `/api/autores/{id}` → Obtener autor por ID  
+- **PUT** `/api/autores/{id}` → Actualizar autor  
+- **DELETE** `/api/autores/{id}` → Eliminar autor  
 
 ---
 
@@ -55,7 +73,7 @@ DELETE /api/autores/{id}
 
 La API implementa un manejo global de excepciones utilizando `@ControllerAdvice`, retornando respuestas estructuradas en formato JSON.
 
-Ejemplo de error:
+Ejemplo:
 
 ```json
 {
@@ -63,39 +81,43 @@ Ejemplo de error:
   "status": 404,
   "error": "Not Found",
   "message": "El autor no existe",
-  "path": "/autores/10"
+  "path": "/api/autores/10"
 }
 ```
 
 ---
 
-## 📸 Capturas
+## 📸 Evidencia de funcionamiento
 
-### Swagger Overview
+### 🔹 Vista general Swagger
 ![Swagger](./images/swagger-overview.png)
 
-### Crear autor (POST)
+### 🔹 Crear autor (POST)
 ![POST](./images/post-autores.png)
 
-### Obtener autores
+### 🔹 Obtener autores
 ![GET](./images/get-autores-success.png)
 
-### Error 404
+### 🔹 Error 404
 ![404](./images/get-autor-id-not-found.png)
 
-### Eliminación exitosa
+### 🔹 Eliminación exitosa
 ![DELETE](./images/delete-autores-success.png)
 
-### Reporte PDF
+### 🔹 Reporte PDF
 ![PDF](./images/pdf-reporte-libros.png)
 
+---
 
-## 🗄️ Base de datos
+## 🔄 Mejoras en versión 2.0
 
-El proyecto utiliza MySQL.
+Esta versión representa una evolución respecto a la versión inicial del proyecto:
 
-Para inicializar la base de datos, ejecutar el script ubicado en:
+- Implementación de **DTOs** para desacoplar entidades de la capa de presentación  
+- Incorporación de **validaciones en los request** para asegurar integridad de datos  
+- Uso de **logs (SLF4J + Logback)** para seguimiento de operaciones  
+- Implementación de **manejo global de excepciones** con respuestas estructuradas  
+- Generación de **reportes PDF dinámicos**  
+- Mejora en la **arquitectura por capas** (Controller → Service → Repository)  
 
-database/biblioteca-db.sql
-
-Asegúrate de configurar correctamente las credenciales en el archivo `application.properties`.
+---
