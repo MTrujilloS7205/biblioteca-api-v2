@@ -38,16 +38,16 @@ http://localhost:8080/swagger-ui.html
 ## 📌 Endpoints principales
 
 ### Crear autor
-POST /autores
+POST /api/autores
 
 ### Obtener autor por ID
-GET /autores/{id}
+GET /api/autores/{id}
 
 ### Actualizar autor
-PUT /autores/{id}
+PUT /api/autores/{id}
 
 ### Eliminar autor
-DELETE /autores/{id}
+DELETE /api/autores/{id}
 
 ---
 
