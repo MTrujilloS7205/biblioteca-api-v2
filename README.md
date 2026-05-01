@@ -28,7 +28,7 @@ Este proyecto fue diseñado siguiendo buenas prácticas de arquitectura en capas
 4. Ejecutar la aplicación
 
 La API estará disponible en:
-http://localhost:8080
+http://localhost:8080/api
 
 Swagger UI:
 http://localhost:8080/swagger-ui.html
