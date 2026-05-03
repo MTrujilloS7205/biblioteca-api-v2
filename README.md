@@ -31,7 +31,7 @@ Este proyecto fue diseñado siguiendo buenas prácticas de arquitectura en capas
 Antes de ejecutar el script, debes crear la base de datos manualmente en MySQL:
 
 ```sql
-CREATE DATABASE biblioteca_db;
+CREATE DATABASE biblioteca;
 ```
 
 Luego ejecutar el script ubicado en:
