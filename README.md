@@ -37,7 +37,9 @@ CREATE DATABASE biblioteca_db;
 Luego ejecutar el script ubicado en:
 
 ```
-database/biblioteca-db.sql
+- database/schema.sql
+- database/data.sql
+
 ```
 
 Asegúrate de configurar correctamente las credenciales en `application.properties`.
